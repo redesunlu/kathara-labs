@@ -1,6 +1,7 @@
 # Laboratorios de Kathara
 
-Este repositorio contiene laboratorios de [Kathara](https://www.kathara.org/) adaptados para la cátedra de [Teleinformática y Redes](http://www.labredes.unlu.edu.ar/tyr), Universidad Nacional de Luján, Argentina.
+Este repositorio contiene laboratorios de [Kathara](https://www.kathara.org/) adaptados para la cátedra de [Teleinformática y Redes](http://www.labredes.unlu.edu.ar/tyr), Universidad Nacional de Luján, Argentina. 
+Reemplaza a los del repositorio [netkit-labs](https://github.com/redesunlu/netkit-labs).
 
 Estos laboratorios están listos para utilizar imágenes de Docker alojadas en [la cuenta de DockerHub del grupo](https://hub.docker.com/u/docentetyr), construidas con los scripts [de este otro repositorio](https://github.com/redesunlu/kathara-docker-images).
 
@@ -8,15 +9,13 @@ Estos laboratorios están listos para utilizar imágenes de Docker alojadas en [
 
 Este repositorio cuenta con los siguientes laboratorios:
 
- * [Laboratorio de ARP](https://github.com/redesunlu/netkit-labs/blob/master/tarballs/netkit-lab_arp.tar.gz?raw=true): Es el laboratorio original de ARP provisto por Netkit.
- * [Laboratorio de Telnet](https://github.com/redesunlu/netkit-labs/blob/master/tarballs/netkit-lab_telnet-TYR.tar.gz?raw=true): Es un laboratorio de Telnet sencillo en el cual hay que ejecutar comandos en un servidor remoto.
- * [Laboratorio de DNS](https://github.com/redesunlu/netkit-labs/blob/master/tarballs/netkit-lab_dns-TYR.tar.gz?raw=true): Es un fork con muy pocas modificaciones del [laboratorio oficial de DNS](http://wiki.netkit.org/netkit-labs/netkit-labs_application-level/netkit-lab_dns/netkit-lab_dns.tar.gz) de Netkit, compatible para su uso con Netkit-NG.
- * [Laboratorio de Email](https://github.com/redesunlu/netkit-labs/blob/master/tarballs/netkit-lab_email.tar.gz?raw=true): Es un fork con muy pocas modificaciones del [laboratorio oficial de Email](http://wiki.netkit.org/netkit-labs/netkit-labs_application-level/netkit-lab_email/netkit-lab_email.tar.gz) de Netkit, compatible para su uso con Netkit-NG.
- * [Laboratorio de NAT](https://github.com/redesunlu/netkit-labs/blob/master/tarballs/netkit-lab_nat.tar.gz?raw=true): Es el laboratorio original de NAT provisto por Netkit.
- * [Laboratorio de Proxy HTTP](https://github.com/redesunlu/netkit-labs/blob/master/tarballs/netkit-lab_proxy-TYR.tar.gz?raw=true): Es un fork con pocas modificaciones del [laboratorio oficial de Webserver](http://wiki.netkit.org/netkit-labs/netkit-labs_application-level/netkit-lab_webserver/netkit-lab_webserver.tar.gz) de Netkit, compatible para su uso con Netkit-NG.
- * [Laboratorio de QoS con TC](https://github.com/redesunlu/netkit-labs/blob/master/tarballs/netkit-lab_tc.tar.gz?raw=true): Este es un laboratorio hecho ad-hoc para validar las reglas de control de tráfico definidas en la práctica de QoS de AyGR.
- * [Laboratorio de Ruteo Dinámico con Quagga](https://github.com/redesunlu/netkit-labs/blob/master/tarballs/netkit-lab_quagga-TYR.tar.gz?raw=true): Es un fork con pocas modificaciones del [laboratorio oficial de Zebra/Quagga](http://wiki.netkit.org/netkit-labs/netkit-labs_basic-topics/netkit-lab_quagga/netkit-lab_quagga.tar.gz) de Netkit, compatible para su uso con Netkit-NG.
- * [Laboratorio de Ruteo Dinámico con RIP](https://github.com/redesunlu/netkit-labs/blob/master/tarballs/netkit-lab_rip-TYR.tar.gz?raw=true): Es un fork con pocas modificaciones del [laboratorio oficial de RIP](http://wiki.netkit.org/netkit-labs/netkit-labs_basic-topics/netkit-lab_rip/netkit-lab_rip.tar.gz) de Netkit, compatible para su uso con Netkit-NG.
- * [Laboratorio de SNMPv2](https://github.com/redesunlu/netkit-labs/blob/master/tarballs/netkit-lab_snmpv2-TYR.tar.gz?raw=true): Este es un laboratorio en el cual debe monitorearse y controlarse un router mediante protocolo SNMPv2.
- * [Laboratorio de Webserver](https://github.com/redesunlu/netkit-labs/blob/master/tarballs/netkit-lab_webserver.tar.gz?raw=true): Es el laboratorio original de Webserver provisto por Netkit.
-
+ * [Laboratorio de Configuración Inicial](https://github.com/redesunlu/kathara-labs/raw/main/tarballs/kathara-lab_conf_inicial-TYR.tar.gz)
+ * [Laboratorio de Telnet](https://github.com/redesunlu/kathara-labs/raw/main/tarballs/kathara-lab_telnet.tar.gz): Es un laboratorio de Telnet sencillo en el cual hay que ejecutar comandos en un servidor remoto.
+ * [Laboratorio de DNS](https://github.com/redesunlu/kathara-labs/raw/main/tarballs/kathara-lab_dns.tar.gz): Es un fork con muy pocas modificaciones del [laboratorio oficial de DNS](http://wiki.netkit.org/netkit-labs/netkit-labs_application-level/netkit-lab_dns/netkit-lab_dns.tar.gz) de Netkit.
+ * [Laboratorio de Email](https://github.com/redesunlu/kathara-labs/raw/main/tarballs/kathara-lab_email.tar.gz): Es un fork con muy pocas modificaciones del [laboratorio oficial de Email](http://wiki.netkit.org/netkit-labs/netkit-labs_application-level/netkit-lab_email/netkit-lab_email.tar.gz) de Netkit.
+ * [Laboratorio de Proxy HTTP](https://github.com/redesunlu/kathara-labs/raw/main/tarballs/kathara-lab_proxy.tar.gz): Es un fork con pocas modificaciones del [laboratorio oficial de Webserver](http://wiki.netkit.org/netkit-labs/netkit-labs_application-level/netkit-lab_webserver/netkit-lab_webserver.tar.gz) de Netkit.
+ * [Laboratorio de Trabajo Práctico Integrador](https://github.com/redesunlu/kathara-labs/raw/main/tarballs/kathara-lab_TP_Integrador.tar.gz): Laboratorio para crear un entorno donde se desarrolla el Trabajo Práctico final de la asignatura.
+ * Laboratorios de detección de fallos:
+   1. [Configuración Inicial](https://github.com/redesunlu/kathara-labs/raw/main/tarballs/DF_L1_configuracion_inicial.tar.gz)
+   1. [Servicios: Telnet](https://github.com/redesunlu/kathara-labs/raw/main/tarballs/DF_L2_servicios_telnet.tar.gz)
+   1. [Servicios: DNS](https://github.com/redesunlu/kathara-labs/raw/main/tarballs/DF_L3_servicios_DNS.tar.gz)
