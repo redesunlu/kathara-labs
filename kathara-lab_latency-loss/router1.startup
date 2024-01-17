@@ -1,4 +1,2 @@
 /sbin/ifconfig eth0 192.168.0.1 up
-/sbin/ifconfig eth1 172.16.1.1 up
-
-/usr/sbin/route add -net 192.168.1.0/24 gw 172.16.1.2
+/sbin/ifconfig eth1 192.168.1.1 up
