@@ -1,2 +1,34 @@
 /sbin/ifconfig eth0 192.168.0.1 up
 /sbin/ifconfig eth1 192.168.1.1 up
+
+
+# Fixed Delay
+# ===========
+# tells to tc to add a queuing discipline (qdisc) on eth0 to add 10ms of delay on each packet traversing the interface.
+
+# tc qdisc add dev eth0 root netem delay 10ms
+
+
+# Variable Delay
+# ==============
+# tells to tc to add a queuing discipline (qdisc) on eth0 to add 10ms of delay with a 5ms of jitter on each packet
+# traversing the interface. Jitter introduces variability into the delay. In this case, the network emulation will
+# randomly vary the delay between 5ms and 15ms (10ms +/- 5ms) for each packet.
+
+# tc qdisc add dev eth0 root netem delay 10ms 5ms
+
+
+# Packet Loss
+# ============
+# tells to tc to add a queuing discipline (qdisc) on eth0 to add 100ms of delay and 50% of packet loss on the interface
+
+tc qdisc add dev eth0 root netem delay 100ms loss 50%
+
+
+# Limit Bandwith
+# ==============
+# tells to tc to add a Token Bucket Filter (tbf) on eth0 to limit bandwidth to 256kbps.
+# The buffer parameter sets the size of the bucket (2kbit) and the latency sets the maximum amount of time
+# a packet can sit in the TBF.
+
+# tc qdisc add dev eth1 root tbf rate 256kbit buffer 2kb latency 10ms
