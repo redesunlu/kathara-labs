@@ -1,4 +1,5 @@
-/sbin/ifconfig eth0 192.168.0.22 up
+ip link set eth0 up
+ip address add 192.168.0.22/24 dev eth0
 chmod 755 /etc
 chmod 755 /etc/bind
-/etc/init.d/bind9 start
+systemctl start bind
