@@ -1,0 +1,12 @@
+# Fixing permissions
+chmod 755 /var
+chmod 755 /var/www
+
+ip addr add 192.168.1.2/24 dev eth0
+ip link set dev eth0 up
+
+# Enable tls and http2 in apache
+a2enmod http2
+
+# Start apache
+service apache2 start
