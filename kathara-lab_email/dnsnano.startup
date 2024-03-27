@@ -1,4 +1,6 @@
-/sbin/ifconfig eth0 192.168.0.22 up
+ip link set eth0 up
+ip address add 192.168.0.22/24 dev eth0
+
 # Fixing permissions
 chmod 755 /etc
 chmod 755 /etc/bind
@@ -18,6 +20,6 @@ echo "guest:guest" | chpasswd
 mkdir /home/guest
 chown guest:guest /home/guest
 
-/etc/init.d/bind9 start
-/etc/init.d/exim4 start
-/etc/init.d/dovecot start
+systemctl start bind
+systemctl start exim4
+systemctl start dovecot
