@@ -1,2 +1,6 @@
 ip addr add 192.168.1.10/24 dev eth0
 ip link set dev eth0 up
+
+# Custom http3 curl is installed in /usr/local/ and by default regular distro curl in /usr/ takes precedence
+export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib
+ldconfig
