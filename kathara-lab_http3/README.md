@@ -1,7 +1,19 @@
-# HTTP/1.1, HTTP/2, HTTP/3 Server examples
+# HTTP/1.1, HTTP/2 and HTTP/3 Curl Basic Labs
 
 1. Start the lab: `kathara lstart`
-1. Start capturing in the host machine: `wireshark xxxx`
+1. Open Wireshark and start capturing on the Kathara interface (named `kt-xxxx`) in the host machine.
+1. Follow [this instructions](https://everything.curl.dev/usingcurl/tls/sslkeylogfile.html) to load in Wireshark the `sslkeys.log` from the `shared` directory. Curl will put all the TLS encryption keys negotiated in that place.
+
+   Or, you can directly run Wireshark with this command: `sudo wireshark -o 'tls.keylog_file:./shared/sslkeys.log'` within the main laboratory directory, loading the curl encryption keys automatically.
+
+
+   **Important Notes**:
+     - Check if you need root permisions to capture on this network interface (ie., run Wireshark with `sudo`) and/or [check the Wireshark documentation](https://wiki.wireshark.org/CaptureSetup/CapturePrivileges).
+
+     - You must use the old `bridge` network Kathara plugin, instead of the default `vde`. Run `sed -i "s/kathara\/katharanp_vde/kathara\/katharanp/g"  ~/.config/kathara.conf` to make the switch. More info: https://github.com/KatharaFramework/NetworkPlugin
+   
+     - Wireshark 4.2+ is required for QUIC+HTTP/3 parsing and decoding. Previous versions won't make it.
+
 1. In the client terminal window:
  - Run the HTTP/1.1 example request:
 ```commandline
@@ -108,3 +120,6 @@ root@client:/# curl -v http://192.168.1.1/index.html
     </body>
 * Connection #0 to host http3.unlu.edu.ar left intact
 ```
+
+## Screenshot
+![HTTP3 Wireshark Screenshot](./misc/http3_capture_screenshot.png)
