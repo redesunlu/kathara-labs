@@ -1,0 +1,9 @@
+ip addr add 192.168.1.20/24 dev eth0
+ip link set dev eth0 up
+
+# Custom http3 curl is installed in /usr/local/ and by default regular distro curl in /usr/ takes precedence
+export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib
+ldconfig
+
+# Configuring the DNS resolution for our site
+echo "192.168.1.3 http3.unlu.edu.ar" >> /etc/hosts
