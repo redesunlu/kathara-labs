@@ -123,3 +123,18 @@ root@client:/# curl -v http://192.168.1.1/index.html
 
 ## Screenshot
 ![HTTP3 Wireshark Screenshot](./misc/http3_capture_screenshot.png)
+
+## Using the Firefox Browser as client
+
+There's a Firefox browser available in the network lab, ready to make requests to the three webservers. To access it, you have to open http://localhost:3000 in your host, for example:
+
+![HTTP3 Firefox Screenshot](./misc/http3_browser_screenshot.png)
+
+
+**Note:** This feature works *as-is* with Linux hosts. If you're using Windows/Mac OS (with Docker Desktop), you have to comment the `browser[0]=A` line in the `lab.conf` file, and run this in the host console **after** the lab has started:
+
+```commandline
+kathara lconfig -n browser --add A
+```
+Then, configure the new eth interface in the `browser` container with something like 
+`ip addr del 192.168.1.20/24 dev eth0 && ip addr add 192.168.1.20/24 dev eth1`. This is because of a docker-desktop bug. See https://github.com/KatharaFramework/Kathara/issues/230
