@@ -1,0 +1,13 @@
+$TTL    60000
+@               IN      SOA     dns.tyr-ejemplo.com.    root.dns.tyr-ejemplo.com. (
+                        20200508 ; serial
+                        28 ; refresh
+                        14 ; retry
+                        3600000 ; expire
+                        0 ; negative cache ttl
+                        )
+@               IN      NS      dns.tyr-ejemplo.com.
+dns		IN	A	170.10.10.3
+proxy	IN	A	170.10.10.2
+www		IN	A	12.12.0.11
+datos	IN	A	12.12.0.12
