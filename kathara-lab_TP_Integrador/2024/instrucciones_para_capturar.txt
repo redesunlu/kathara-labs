@@ -1,0 +1,11 @@
+Luego de iniciado el laboratorio, comience la captura desde el host utilizando el siguiente comando:
+
+(T=$(date +%F-%H_%M_%S); tshark -w "temp_$T.pcap" -f 'not ip6' $(ip link show type bridge | grep -e "^[0-9]*: kt-" | cut -d ":" -f2 | sed 's/^/-i/' | tr "\n" " ") && reordercap "temp_$T.pcap" "captura_$T.pcap" && rm "temp_$T.pcap")
+
+Para recuperar la página, en pcusuario ejecutar:
+
+Una vez iniciada la captura, desde pcusuario recupere un recurso web utilizando un browser en modo texto (w3m) con el siguiente comando:
+
+w3m -F http://www.example.com
+
+Una vez recuperado el recurso, salga del navegador (Presione q, y) y por último detenga la captura en el host.
