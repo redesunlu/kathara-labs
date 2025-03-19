@@ -1,0 +1,42 @@
+name: Update Tarballs
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v4
+      with:
+        # git-restore-mtime-bare uses the ref log to find the correct timestamp
+        # for each file. This requires a full git history. The default value (1)
+        # creates a shallow checkout.
+        fetch-depth: 0
+
+    # Fix timestamps
+    - name: Restore timestamps
+      uses: chetan/git-restore-mtime-action@v2
+
+    - name: Regenerate all tarballs
+      run: make all
+
+    - name: Commit and push changes if there are any
+      run: |
+        git add -f tarballs/
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        if [ -n "$(git status --porcelain)" ]; then
+          git commit -m 'Update Tarballs'
+          git push
+        else
+          echo "No changes to commit"
+        fi
