@@ -1,0 +1,4 @@
+echo "visible_hostname proxy.tpfinal-tyr.com" >> /etc/squid/squid.conf
+sed -i 's/\#http_access allow localnet/http_access allow all/' /etc/squid/squid.conf
+#rm -r /var/spool/squid/*
+#squid -z
