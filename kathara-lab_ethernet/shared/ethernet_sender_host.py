@@ -18,6 +18,8 @@ NOTA: Requiere privilegios de administrador (sudo) para enviar tramas raw.
 from scapy.all import Ether, sendp, conf, get_if_hwaddr, Padding
 import sys
 
+MIN_ETHERNET_FRAME = 64  # Mínimo de bytes para el payload de Ethernet (46 bytes de datos + 18 bytes de cabecera = 64 bytes)
+
 # Configuración para visualizar mejor los paquetes
 conf.verb = 1  # Nivel de verbosidad (0=silencioso, 1=normal, 2=verbose)
 
@@ -56,15 +58,14 @@ def enviar_trama_ethernet(dst_mac, mensaje):
 
 	# Chequeo si el padding es necesario y lo agrego en tal caso
 	# Comentado porque no es necesario para el ejercicio, pero lo dejo como referencia
-	# min_ethernet_len = 64
-	# if len(trama) < min_ethernet_len:
-	# 	pad_len = min_ethernet_len - len(trama)
+	# if len(trama) < MIN_ETHERNET_FRAME:
+	# 	pad_len = MIN_ETHERNET_FRAME - len(trama)
 	# 	# Crear un objecto Padding con la longitud requerida de ceros
 	# 	# Puedes usar cualquier valor de byte para la carga de padding, aquí uso ceros
 	# 	pad = Padding(load=b'\x00' * pad_len)
 	# 	# Apilar el padding a la trama original
 	# 	trama = trama / pad
-	# 	print(f" - Padding agregado: {pad_len} bytes para alcanzar el mínimo de {min_ethernet_len} bytes")
+	# 	print(f" - Padding agregado: {pad_len} bytes para alcanzar el mínimo de {MIN_ETHERNET_FRAME} bytes")
 	# 	print(f" - Longitud de la trama con padding: {len(trama)} bytes")
 
 	# Mostrar resumen de la trama construida
