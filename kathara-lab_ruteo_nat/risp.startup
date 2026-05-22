@@ -1,0 +1,2 @@
+hostname risp
+ip addr add 192.168.10.14/30 dev eth0
