@@ -1,0 +1,9 @@
+Luego de iniciado el laboratorio, comience la captura desde el dispositivo capturador utilizando el siguiente comando:
+
+tshark -i eth0 -i eth1 -i eth2 -i eth3 -w - > /shared/captura_tpfinal.cap
+
+Una vez iniciada la captura, desde pcusuario recupere un recurso web utilizando un browser en modo texto (w3m) con el siguiente comando:
+
+w3m -F http://www.tpfinal-tyr.com
+
+Una vez recuperado el recurso, salga del navegador (Presione q, y) y por último detenga la captura en el host.

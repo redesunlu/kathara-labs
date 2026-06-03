@@ -1,0 +1,13 @@
+$TTL    60000
+@               IN      SOA     dns.tpfinal-tyr.com.    root.dns.tpfinal-tyr.com. (
+                        20200508 ; serial
+                        28 ; refresh
+                        14 ; retry
+                        3600000 ; expire
+                        0 ; negative cache ttl
+                        )
+@               IN      NS      dns.tpfinal-tyr.com.
+dns		IN	A	8.8.8.8
+proxy	IN	A	10.10.0.1
+www		IN	A	12.12.0.11
+datos	IN	A	12.12.0.12
